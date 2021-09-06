@@ -15,45 +15,41 @@ Imports System.Linq
 Imports System.Collections.ObjectModel
 
 Namespace WpfApplication1
-    Public NotInheritable Class DataHelper
+	Public Module DataHelper
+		Public Function GetData() As IList(Of City)
 
-        Private Sub New()
-        End Sub
+			Dim cities As New ObservableCollection(Of City)()
+			cities.Add(New City(1, "London", "UK"))
+			cities.Add(New City(1, "Glasgow", "UK"))
+			cities.Add(New City(1, "Edinburgh", "UK"))
+			cities.Add(New City(1, "Aberdeen Dundee", "UK"))
 
-        Public Shared Function GetData() As IList(Of City)
+			cities.Add(New City(2, "Washington", "USA"))
+			cities.Add(New City(2, "Chicago", "USA"))
+			cities.Add(New City(2, "Los Angeles", "USA"))
+			cities.Add(New City(2, "New York", "USA"))
 
-            Dim cities As New ObservableCollection(Of City)()
-            cities.Add(New City(1, "London", "UK"))
-            cities.Add(New City(1, "Glasgow", "UK"))
-            cities.Add(New City(1, "Edinburgh", "UK"))
-            cities.Add(New City(1, "Aberdeen Dundee", "UK"))
+			cities.Add(New City(3, "Hong Kong", "China"))
+			cities.Add(New City(3, "Shanghai", "China"))
+			cities.Add(New City(3, "Beijing", "China"))
+			cities.Add(New City(3, "Tianjin", "China"))
 
-            cities.Add(New City(2, "Washington", "USA"))
-            cities.Add(New City(2, "Chicago", "USA"))
-            cities.Add(New City(2, "Los Angeles", "USA"))
-            cities.Add(New City(2, "New York", "USA"))
+			Return cities
+		End Function
+	End Module
 
-            cities.Add(New City(3, "Hong Kong", "China"))
-            cities.Add(New City(3, "Shanghai", "China"))
-            cities.Add(New City(3, "Beijing", "China"))
-            cities.Add(New City(3, "Tianjin", "China"))
+	Public Class City
+		Public Sub New()
+		End Sub
 
-            Return cities
-        End Function
-    End Class
+		Public Sub New(ByVal id As Integer, ByVal cityName As String, ByVal country As String)
+			Me.ID = id
+			Me.CityName = cityName
+			Me.Country = country
+		End Sub
 
-    Public Class City
-        Public Sub New()
-        End Sub
-
-        Public Sub New(ByVal id As Integer, ByVal cityName As String, ByVal country As String)
-            Me.ID = id
-            Me.CityName = cityName
-            Me.Country = country
-        End Sub
-
-        Public Property ID() As Integer
-        Public Property CityName() As String
-        Public Property Country() As String
-    End Class
+		Public Property ID() As Integer
+		Public Property CityName() As String
+		Public Property Country() As String
+	End Class
 End Namespace

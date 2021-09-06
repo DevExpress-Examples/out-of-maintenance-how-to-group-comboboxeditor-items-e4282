@@ -17,14 +17,14 @@ Imports System.Windows.Data
 Imports System.ComponentModel
 
 Namespace WpfApplication1
-    Public Class MainViewModel
-        Public Property Cities() As IList(Of City)
-        Public Property GroupedCities() As ICollectionView
+	Public Class MainViewModel
+		Public Property Cities() As IList(Of City)
+		Public Property GroupedCities() As ICollectionView
 
-        Public Sub New()
-            Cities = DataHelper.GetData()
-            GroupedCities = CollectionViewSource.GetDefaultView(Cities)
-            GroupedCities.GroupDescriptions.Add(New PropertyGroupDescription("Country"))
-        End Sub
-    End Class
+		Public Sub New()
+			Cities = DataHelper.GetData()
+			GroupedCities = CollectionViewSource.GetDefaultView(Cities)
+			GroupedCities.GroupDescriptions.Add(New PropertyGroupDescription("Country"))
+		End Sub
+	End Class
 End Namespace
