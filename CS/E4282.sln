@@ -1,5 +1,5 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample", "WpfApplication1\Sample.csproj", "{5090D710-CF11-46ED-9D88-FEB1795F365A}"
 EndProject
 Global
